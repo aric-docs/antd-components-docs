@@ -6,7 +6,6 @@
     "start": "npm run dev",
     "dev": "dumi dev",
     "build": "dumi build",
-    "postbuild": "workbox generateSW workbox-config.cjs",
     "preview": "dumi preview",
     "prepare": "husky install && dumi setup"
   },
@@ -31,7 +30,9 @@
     "dumi": "^2.4.13",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "workbox-cli": "^7.0.0"
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@jswork/antd-components": "^1.0.219"
   }
 }

@@ -5,21 +5,42 @@ order: 1
 
 # Playground
 
-Welcome to the interactive playground! Here you can explore live demos with real-time editing capabilities.
+Welcome to the interactive playground! Here you can explore live demos of antd-components with real-time editing capabilities.
 
-## Features
+## Form Input Components
 
-- **Live Editing** - Edit code and see changes immediately
-- **Interactive Demos** - All examples are runnable and editable
-- **Type-Safe** - Full TypeScript support
-- **Best Practices** - Examples following industry standards
+<code src="./demos/form-input.tsx">Form Input Demo</code>
 
-## Demo Example
+Explore various form input components including AcInput, AcTextarea, AcInputNumber, and AcColorPicker.
 
-Here's a simple interactive counter example to get started:
+## Selection Components
 
-<code src="./demos/counter.tsx">Interactive Counter</code>
+<code src="./demos/selection.tsx">Selection Demo</code>
 
-## Getting Started
+Discover selection components like AcSelect, AcRadioGroup, AcCheckboxGroup, AcSwitch, and AcRate.
 
-You can create your own playground examples by creating markdown files in the `playground` directory. Use the code block syntax with `tsx` or `jsx` language to create interactive demos.
+## Date & Time Components
+
+<code src="./demos/date-time.tsx">Date & Time Demo</code>
+
+Try out date and time pickers including AcDatePicker, AcTimePicker, and AcRangePicker.
+
+## Upload Components
+
+<code src="./demos/upload.tsx">Upload Demo</code>
+
+Experiment with different upload patterns using AcUpload, AcUploadDragger, and AcUploadPicture.
+
+## Data Display Components
+
+<code src="./demos/data-display.tsx">Data Display Demo</code>
+
+Explore data display components such as AcTable, AcTree, and AcCheckableTagList.
+
+## About These Demos
+
+All demos are:
+- **Interactive** - You can interact with components in real-time
+- **Editable** - Source code is visible and can be modified
+- **Type-Safe** - Built with TypeScript for better development experience
+- **Production Ready** - Following best practices from antd-components

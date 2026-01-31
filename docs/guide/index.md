@@ -5,16 +5,17 @@ order: 0
 
 # Guide
 
-Welcome to the antd-components-docs template guide. This section will help you get started with building your documentation site.
+Welcome to the antd-components documentation guide. This section will help you get started with using antd-components in your React applications.
 
 ## Topics
 
-- [Getting Started](./getting-started) - Installation and basic usage
-- [Configuration](./configuration) - Customize your documentation site
-- [Deployment](./deployment) - Deploy your documentation site
+- [Getting Started](./getting-started.md) - Installation and basic usage
+- [Configuration](./configuration.md) - Customize your documentation site
+- [Deployment](./deployment.md) - Deploy your documentation site
 
 ## Quick Links
 
-- [Dumi Official Documentation](https://d.umijs.org)
-- [GitHub Repository](https://github.com/afeiship/antd-components-docs)
+- [Live Preview](https://afeiship.github.io/antd-components/) - Interactive component showcase
+- [GitHub Repository](https://github.com/afeiship/antd-components) - Source code and issues
+- [NPM Package](https://www.npmjs.org/package/@jswork/antd-components) - Package information
 

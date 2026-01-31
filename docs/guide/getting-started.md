@@ -5,122 +5,243 @@ order: 0
 
 # Getting Started
 
-Dumi Docs Template is a starting point for building documentation sites with dumi. This template comes with pre-configured tooling and best practices.
+antd-components is a collection of wrapped and enhanced Ant Design components for React applications. It provides production-ready components with additional features such as state management, form integration, and improved UX patterns.
 
 ## Prerequisites
 
-- Node.js >= 22 (use [.nvmrc](/.nvmrc) with nvm)
-- npm, yarn, or pnpm
+- Node.js >= 16
+- React 18+
+- Ant Design 5.x
 
 ## Installation
 
-### Clone the Template
+### Install Package
 
 ```bash
-git clone https://github.com/afeiship/antd-components-docs.git
-cd antd-components-docs
+npm install -S @jswork/antd-components
 ```
 
-### Install Dependencies
+### Peer Dependencies
+
+The library requires these peer dependencies:
 
 ```bash
-# npm
-npm install
-
-# yarn
-yarn install
-
-# pnpm
-pnpm install
+npm install -S antd @ant-design/icons @ebay/nice-form-react react react-dom react-router-dom
 ```
 
-## Development
-
-### Start Dev Server
+Or install all at once:
 
 ```bash
-npm run dev
+npm install -S @jswork/antd-components antd @ant-design/icons @ebay/nice-form-react react react-dom react-router-dom
 ```
 
-The documentation site will be available at `http://localhost:8000`
+## Setup
 
-### Directory Structure
+### 1. Import Styles
 
-```
-antd-components-docs
-├── .dumirc.ts          # Dumi configuration
-├── docs                # Documentation files
-│   ├── index.md       # Home page
-│   ├── guide          # Guide section
-│   └── components     # Component documentation
-├── public             # Static assets
-│   └── logo.png       # Site logo
-└── workbox-config.cjs # PWA configuration
+Import the styles in your application's entry point:
+
+```tsx
+// CSS
+import '@jswork/antd-components/dist/style.css';
+
+// or SCSS
+import '@jswork/antd-components/dist/style.scss';
 ```
 
-## Available Scripts
+### 2. Import Components
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run start` - Alias for `npm run dev`
+You can import components in different ways:
 
-## Configuration
+#### Import All Components
 
-The main configuration is in [`.dumirc.ts`](/.dumirc.ts):
+```tsx
+import { AcInput, AcDatePicker, AcSelect, AcButton } from '@jswork/antd-components';
+import '@jswork/antd-components/dist/style.scss';
 
-```ts
-import { defineConfig } from 'dumi';
+function App() {
+  return (
+    <div>
+      <AcInput />
+      <AcDatePicker />
+    </div>
+  );
+}
+```
 
-export default defineConfig({
-  base: '/antd-components-docs/',           // Base path for deployment
-  publicPath: '/antd-components-docs/',     // Public path for assets
-  logo: '/antd-components-docs/logo.png',   // Site logo
-  locales: [{ id: 'en-US', name: 'English' }],
-  themeConfig: {
-    name: 'Dumi Docs',           // Site name
-    description: 'A dumi documentation template project.',
-    nav: [...],                  // Navigation
-    socialLinks: {
-      github: 'https://github.com/afeiship/antd-components-docs',
+#### Import Individual Component
+
+```tsx
+import { AcInput } from '@jswork/antd-components/dist/input';
+```
+
+#### Import with Types
+
+```tsx
+import { AcInput } from '@jswork/antd-components/dist/input';
+import type { AcInputProps } from '@jswork/antd-components/dist/input';
+```
+
+## Quick Examples
+
+### Basic Input
+
+```tsx
+import { useState } from 'react';
+import { AcInput } from '@jswork/antd-components';
+
+function Example() {
+  const [text, setText] = useState('');
+
+  return (
+    <AcInput
+      value={text}
+      onChange={({ target }) => setText(target.value)}
+      placeholder="Enter text..."
+    />
+  );
+}
+```
+
+### Select with Options
+
+```tsx
+import { useState } from 'react';
+import { AcSelect } from '@jswork/antd-components';
+
+function Example() {
+  const [selected, setSelected] = useState(undefined);
+
+  return (
+    <AcSelect
+      value={selected}
+      onChange={({ target }) => setSelected(target.value)}
+      options={[
+        { value: '1', label: 'Option 1' },
+        { value: '2', label: 'Option 2' }
+      ]}
+    />
+  );
+}
+```
+
+### Date Picker
+
+```tsx
+import { useState } from 'react';
+import { AcDatePicker } from '@jswork/antd-components';
+
+function Example() {
+  const [date, setDate] = useState(null);
+
+  return (
+    <AcDatePicker
+      value={date}
+      onChange={({ target }) => setDate(target.value)}
+      format="YYYY-MM-DD"
+    />
+  );
+}
+```
+
+### Upload Component
+
+```tsx
+import { useState } from 'react';
+import { AcUpload } from '@jswork/antd-components';
+
+function Example() {
+  const [files, setFiles] = useState([]);
+
+  return (
+    <AcUpload
+      value={files}
+      onChange={({ target }) => setFiles(target.value)}
+      action="/api/upload"
+    />
+  );
+}
+```
+
+## Component Naming Convention
+
+All components in antd-components follow a consistent naming pattern:
+
+- **Ac Prefix**: All component names start with `Ac` (e.g., `AcInput`, `AcDatePicker`)
+- **Fc Suffix**: Functional component variants use `Fc` suffix (e.g., `AcInputFc`)
+- **Prop Types**: Each component exports its props type (e.g., `AcInputProps`)
+
+```tsx
+import {
+  AcInput,           // Class component
+  AcInputFc,         // Functional component variant
+  type AcInputProps  // Props type definition
+} from '@jswork/antd-components';
+```
+
+## Event Handling Pattern
+
+Most components use a standardized event pattern for consistency:
+
+```tsx
+// onChange receives an object with target.value
+onChange={({ target }) => {
+  console.log(target.value); // The new value
+}}
+
+// This is similar to native DOM events
+onChange={(event) => {
+  console.log(event.target.value);
+}}
+```
+
+## Form Integration
+
+antd-components integrates with `@ebay/nice-form-react` for schema-based form generation:
+
+```tsx
+import { NiceForm } from '@ebay/nice-form-react';
+import { AcInput, AcSelect, AcDatePicker } from '@jswork/antd-components';
+
+const schema = {
+  properties: {
+    username: {
+      type: 'string',
+      title: 'Username',
+      component: 'ac-input'
     },
-  },
-});
-```
+    role: {
+      type: 'string',
+      title: 'Role',
+      component: 'ac-select',
+      enum: ['admin', 'user', 'guest']
+    },
+    birthDate: {
+      type: 'string',
+      title: 'Birth Date',
+      component: 'ac-date-picker'
+    }
+  }
+};
 
-## Adding Content
-
-### Creating Pages
-
-Create markdown files in the `docs` directory:
-
-```markdown
----
-title: My Page
-order: 1
----
-
-# My Page Content
-
-Write your documentation here.
-```
-
-### Organizing Sections
-
-Create subdirectories to organize your documentation:
-
-```
-docs/
-├── guide/
-│   ├── getting-started.md
-│   ├── configuration.md
-│   └── deployment.md
-└── components/
-    ├── index.md
-    └── button.md
+function FormExample() {
+  return (
+    <NiceForm
+      schema={schema}
+      components={{
+        'ac-input': AcInput,
+        'ac-select': AcSelect,
+        'ac-date-picker': AcDatePicker
+      }}
+    />
+  );
+}
 ```
 
 ## Next Steps
 
-- [Configuration](/guide/configuration) - Customize your documentation site
-- [Deployment](/guide/deployment) - Deploy your documentation site
+- [Form Input Components](/components/form-input) - Explore input components
+- [Selection Components](/components/selection) - Explore selection components
+- [Date & Time Components](/components/date-time) - Explore date/time components
+- [Upload Components](/components/upload) - Explore upload components
+- [Data Display Components](/components/data-display) - Explore data display components

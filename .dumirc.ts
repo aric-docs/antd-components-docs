@@ -9,8 +9,8 @@ export default defineConfig({
     codeBlockMode: 'passive',
   },
   themeConfig: {
-    name: 'Dumi Docs',
-    description: 'A dumi documentation template project.',
+    name: 'antd-components',
+    description: 'Enhanced Ant Design components for React applications with state management, form integration, and improved UX patterns.',
     nav: [
       {
         title: 'Guide',
@@ -25,9 +25,33 @@ export default defineConfig({
         link: '/playground',
       },
     ],
+    sidebar: {
+      '/': [
+        {
+          title: 'Guide',
+          children: [
+            { title: 'Home', link: '/index' },
+            { title: 'Getting Started', link: '/guide/getting-started' },
+            { title: 'Configuration', link: '/guide/configuration' },
+            { title: 'Deployment', link: '/guide/deployment' },
+          ],
+        },
+        {
+          title: 'Components',
+          children: [
+            { title: 'Overview', link: '/components/index' },
+            { title: 'Form Input', link: '/components/form-input' },
+            { title: 'Selection', link: '/components/selection' },
+            { title: 'Date & Time', link: '/components/date-time' },
+            { title: 'Upload', link: '/components/upload' },
+            { title: 'Data Display', link: '/components/data-display' },
+          ],
+        },
+      ],
+    },
     nprogress: true,
     socialLinks: {
-      github: 'https://github.com/aric-tpls/antd-components-docs',
+      github: 'https://github.com/afeiship/antd-components',
     },
   },
   styles: [
