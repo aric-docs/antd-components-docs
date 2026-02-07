@@ -1,8 +1,8 @@
 ---
 title: antd-components
 hero:
-  title: antd-components
-  description: A collection of wrapped and enhanced Ant Design components for React applications with state management, form integration, and improved UX patterns.
+  title: ac-components
+  description: A collection of wrapped and enhanced Ant Design components for React applications with state management, form integration, and improved UX
   actions:
     - text: Get Started
       link: /guide/getting-started
