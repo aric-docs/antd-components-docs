@@ -33,6 +33,6 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "@jswork/antd-components": "^1.0.219"
+    "@jswork/antd-components": "^1.0.221"
   }
 }

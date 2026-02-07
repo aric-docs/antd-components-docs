@@ -20,13 +20,13 @@ function Example() {
   const columns = [
     { title: 'Name', dataIndex: 'name', key: 'name' },
     { title: 'Age', dataIndex: 'age', key: 'age' },
-    { title: 'Address', dataIndex: 'address', key: 'address' }
+    { title: 'Address', dataIndex: 'address', key: 'address' },
   ];
 
   const data = [
     { key: '1', name: 'John', age: 32, address: 'New York' },
     { key: '2', name: 'Jane', age: 28, address: 'London' },
-    { key: '3', name: 'Bob', age: 45, address: 'Paris' }
+    { key: '3', name: 'Bob', age: 45, address: 'Paris' },
   ];
 
   return <AcTable columns={columns} dataSource={data} />;
@@ -35,13 +35,13 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| columns | Table columns | `Column[]` | - |
-| dataSource | Table data | `any[]` | - |
-| rowKey | Unique row key | `string` \| `(record) => string` | `'key'` |
-| loading | Loading state | `boolean` | `false` |
-| pagination | Pagination config | `object` \| `false` | - |
+| Property   | Description       | Type                             | Default |
+| ---------- | ----------------- | -------------------------------- | ------- |
+| columns    | Table columns     | `Column[]`                       | -       |
+| dataSource | Table data        | `any[]`                          | -       |
+| rowKey     | Unique row key    | `string` \| `(record) => string` | `'key'` |
+| loading    | Loading state     | `boolean`                        | `false` |
+| pagination | Pagination config | `object` \| `false`              | -       |
 
 ---
 
@@ -60,14 +60,14 @@ function Example() {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      link: true // Enable link for this column
+      link: true, // Enable link for this column
     },
-    { title: 'Age', dataIndex: 'age', key: 'age' }
+    { title: 'Age', dataIndex: 'age', key: 'age' },
   ];
 
   const data = [
     { key: '1', name: 'John', age: 32 },
-    { key: '2', name: 'Jane', age: 28 }
+    { key: '2', name: 'Jane', age: 28 },
   ];
 
   const handleClick = (record) => {
@@ -86,12 +86,12 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| columns | Table columns | `Column[]` | - |
-| dataSource | Table data | `any[]` | - |
-| onLinkClick | Callback when link is clicked | `(record) => void` | - |
-| rowKey | Unique row key | `string` \| `(record) => string` | `'key'` |
+| Property    | Description                   | Type                             | Default |
+| ----------- | ----------------------------- | -------------------------------- | ------- |
+| columns     | Table columns                 | `Column[]`                       | -       |
+| dataSource  | Table data                    | `any[]`                          | -       |
+| onLinkClick | Callback when link is clicked | `(record) => void`               | -       |
+| rowKey      | Unique row key                | `string` \| `(record) => string` | `'key'` |
 
 ---
 
@@ -111,13 +111,13 @@ function Example() {
       title: 'Status',
       dataIndex: 'status',
       key: 'status',
-      statusSwitcher: true // Enable status switcher
-    }
+      statusSwitcher: true, // Enable status switcher
+    },
   ];
 
   const data = [
     { key: '1', name: 'John', status: 'active' },
-    { key: '2', name: 'Jane', status: 'inactive' }
+    { key: '2', name: 'Jane', status: 'inactive' },
   ];
 
   const handleStatusChange = (record, newStatus) => {
@@ -136,12 +136,12 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| columns | Table columns | `Column[]` | - |
-| dataSource | Table data | `any[]` | - |
-| onStatusChange | Callback when status changes | `(record, status) => void` | - |
-| rowKey | Unique row key | `string` \| `(record) => string` | `'key'` |
+| Property       | Description                  | Type                             | Default |
+| -------------- | ---------------------------- | -------------------------------- | ------- |
+| columns        | Table columns                | `Column[]`                       | -       |
+| dataSource     | Table data                   | `any[]`                          | -       |
+| onStatusChange | Callback when status changes | `(record, status) => void`       | -       |
+| rowKey         | Unique row key               | `string` \| `(record) => string` | `'key'` |
 
 ---
 
@@ -161,13 +161,13 @@ function Example() {
       title: 'Enabled',
       dataIndex: 'enabled',
       key: 'enabled',
-      toggle: true // Enable toggle switch
-    }
+      toggle: true, // Enable toggle switch
+    },
   ];
 
   const data = [
     { key: '1', name: 'John', enabled: true },
-    { key: '2', name: 'Jane', enabled: false }
+    { key: '2', name: 'Jane', enabled: false },
   ];
 
   const handleToggle = (record, checked) => {
@@ -186,12 +186,12 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| columns | Table columns | `Column[]` | - |
-| dataSource | Table data | `any[]` | - |
-| onToggle | Callback when toggle changes | `(record, checked) => void` | - |
-| rowKey | Unique row key | `string` \| `(record) => string` | `'key'` |
+| Property   | Description                  | Type                             | Default |
+| ---------- | ---------------------------- | -------------------------------- | ------- |
+| columns    | Table columns                | `Column[]`                       | -       |
+| dataSource | Table data                   | `any[]`                          | -       |
+| onToggle   | Callback when toggle changes | `(record, checked) => void`      | -       |
+| rowKey     | Unique row key               | `string` \| `(record) => string` | `'key'` |
 
 ---
 
@@ -214,16 +214,14 @@ function Example() {
       key: '1',
       children: [
         { title: 'Child 1-1', key: '1-1' },
-        { title: 'Child 1-2', key: '1-2' }
-      ]
+        { title: 'Child 1-2', key: '1-2' },
+      ],
     },
     {
       title: 'Parent 2',
       key: '2',
-      children: [
-        { title: 'Child 2-1', key: '2-1' }
-      ]
-    }
+      children: [{ title: 'Child 2-1', key: '2-1' }],
+    },
   ];
 
   return (
@@ -238,13 +236,13 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| selectedKeys | Selected keys | `string[]` | - |
-| onChange | Callback when selection changes | `(keys) => void` | - |
-| treeData | Tree data structure | `TreeDataNode[]` | - |
-| checkable | Show checkboxes | `boolean` | `false` |
-| expandedKeys | Expanded keys | `string[]` | - |
+| Property     | Description                     | Type             | Default |
+| ------------ | ------------------------------- | ---------------- | ------- |
+| selectedKeys | Selected keys                   | `string[]`       | -       |
+| onChange     | Callback when selection changes | `(keys) => void` | -       |
+| treeData     | Tree data structure             | `TreeDataNode[]` | -       |
+| checkable    | Show checkboxes                 | `boolean`        | `false` |
+| expandedKeys | Expanded keys                   | `string[]`       | -       |
 
 ---
 
@@ -259,10 +257,7 @@ import { AcCardExtras } from '@jswork/antd-components';
 
 function Example() {
   return (
-    <AcCardExtras
-      title="Card Title"
-      extra={<a href="#">More</a>}
-    >
+    <AcCardExtras title="Card Title" extra={<a href="#">More</a>}>
       <p>Card content goes here.</p>
     </AcCardExtras>
   );
@@ -277,14 +272,11 @@ import { AcCardExtras } from '@jswork/antd-components';
 function Example() {
   const actions = [
     { icon: 'edit', onClick: () => console.log('Edit') },
-    { icon: 'delete', onClick: () => console.log('Delete') }
+    { icon: 'delete', onClick: () => console.log('Delete') },
   ];
 
   return (
-    <AcCardExtras
-      title="Card Title"
-      actions={actions}
-    >
+    <AcCardExtras title="Card Title" actions={actions}>
       <p>Card content goes here.</p>
     </AcCardExtras>
   );
@@ -293,117 +285,18 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| title | Card title | `ReactNode` | - |
-| extra | Extra content in the header | `ReactNode` | - |
-| actions | Action buttons | `Action[]` | - |
-| children | Card content | `ReactNode` | - |
-| bordered | Show border | `boolean` | `true` |
-
----
-
-## AcCheckableTag
-
-Checkable tag component.
-
-### Basic Usage
-
-```tsx
-import { useState } from 'react';
-import { AcCheckableTag } from '@jswork/antd-components';
-
-function Example() {
-  const [checked, setChecked] = useState(false);
-
-  return (
-    <AcCheckableTag
-      checked={checked}
-      onChange={(checked) => setChecked(checked)}
-    >
-      Tag Label
-    </AcCheckableTag>
-  );
-}
-```
-
-### API
-
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| checked | Tag checked state | `boolean` | `false` |
-| onChange | Callback when state changes | `(checked) => void` | - |
-| children | Tag label | `ReactNode` | - |
-
----
-
-## AcCheckableTagList
-
-Checkable tag list component.
-
-### Basic Usage
-
-```tsx
-import { useState } from 'react';
-import { AcCheckableTagList } from '@jswork/antd-components';
-
-function Example() {
-  const [selectedTags, setSelectedTags] = useState([]);
-
-  const tags = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
-
-  return (
-    <AcCheckableTagList
-      value={selectedTags}
-      onChange={(tags) => setSelectedTags(tags)}
-      tags={tags}
-    />
-  );
-}
-```
-
-### API
-
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Selected tags | `string[]` | - |
-| onChange | Callback when selection changes | `(tags) => void` | - |
-| tags | Available tags | `string[]` | - |
-
----
-
-## AcEditableTagGroup
-
-Editable tag group component.
-
-### Basic Usage
-
-```tsx
-import { useState } from 'react';
-import { AcEditableTagGroup } from '@jswork/antd-components';
-
-function Example() {
-  const [tags, setTags] = useState(['Tag1', 'Tag2', 'Tag3']);
-
-  return (
-    <AcEditableTagGroup
-      value={tags}
-      onChange={(tags) => setTags(tags)}
-    />
-  );
-}
-```
-
-### API
-
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Array of tags | `string[]` | - |
-| onChange | Callback when tags change | `(tags) => void` | - |
+| Property | Description                 | Type        | Default |
+| -------- | --------------------------- | ----------- | ------- |
+| title    | Card title                  | `ReactNode` | -       |
+| extra    | Extra content in the header | `ReactNode` | -       |
+| actions  | Action buttons              | `Action[]`  | -       |
+| children | Card content                | `ReactNode` | -       |
+| bordered | Show border                 | `boolean`   | `true`  |
 
 ---
 
 ## Related Components
 
+- [Tag Components](/components/tag-components) - CheckableTag, CheckableTagList, EditableTagGroup
 - [Form Input Components](/components/form-input) - Input, Textarea, InputNumber, etc.
 - [Selection Components](/components/selection) - Select, Radio, Checkbox, etc.

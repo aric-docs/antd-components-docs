@@ -49,7 +49,10 @@ function App() {
   return (
     <div>
       <AcInput value={text} onChange={({ target }) => setText(target.value)} />
-      <AcDatePicker value={date} onChange={({ target }) => setDate(target.value)} />
+      <AcDatePicker
+        value={date}
+        onChange={({ target }) => setDate(target.value)}
+      />
     </div>
   );
 }
@@ -67,7 +70,7 @@ import {
   AcSelect,
   AcDatePicker,
   AcUpload,
-  AcTable
+  AcTable,
 } from '@jswork/antd-components';
 ```
 
@@ -98,11 +101,13 @@ import type { AcInputProps } from '@jswork/antd-components/dist/input';
 ## Documentation
 
 - [Guide](/guide/getting-started) - Installation and setup instructions
-- [Form Input Components](/components/form-input) - AcInput, AcTextarea, AcInputNumber, and more
+- [Form Input Components](/components/form-input) - AcInput, AcTextarea, AcInputNumber, AcMarkdownEditor, and more
 - [Selection Components](/components/selection) - AcSelect, AcTreeSelect, AcRadioGroup, and more
 - [Date & Time Components](/components/date-time) - AcDatePicker, AcTimePicker, AcRangePicker
 - [Upload Components](/components/upload) - AcUpload, AcUploadDragger, AcUploadPicture
 - [Data Display Components](/components/data-display) - AcTable, AcTree, AcCardExtras
+- [Tag Components](/components/tag-components) - AcCheckableTag, AcCheckableTagList, AcEditableTagGroup
+- [Other Components](/components/other-components) - AcButton, AcSearch, AcAlert, and more
 
 ## Resources
 

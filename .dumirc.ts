@@ -45,6 +45,8 @@ export default defineConfig({
             { title: 'Date & Time', link: '/components/date-time' },
             { title: 'Upload', link: '/components/upload' },
             { title: 'Data Display', link: '/components/data-display' },
+            { title: 'Tag Components', link: '/components/tag-components' },
+            { title: 'Other Components', link: '/components/other-components' },
           ],
         },
       ],

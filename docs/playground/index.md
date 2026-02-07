@@ -13,6 +13,12 @@ Welcome to the interactive playground! Here you can explore live demos of antd-c
 
 Explore various form input components including AcInput, AcTextarea, AcInputNumber, and AcColorPicker.
 
+## Markdown Editor
+
+<code src="./demos/markdown.tsx">Markdown Editor Demo</code>
+
+Try out the AcMarkdownEditor component with live preview functionality.
+
 ## Selection Components
 
 <code src="./demos/selection.tsx">Selection Demo</code>
@@ -40,6 +46,7 @@ Explore data display components such as AcTable, AcTree, and AcCheckableTagList.
 ## About These Demos
 
 All demos are:
+
 - **Interactive** - You can interact with components in real-time
 - **Editable** - Source code is visible and can be modified
 - **Type-Safe** - Built with TypeScript for better development experience

@@ -52,12 +52,12 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Input value | `string` | - |
-| onChange | Callback when value changes | `({ target: { value } }) => void` | - |
-| autoComplete | Enable autoComplete | `boolean` | `false` |
-| placeholder | Input placeholder | `string` | - |
+| Property     | Description                 | Type                              | Default |
+| ------------ | --------------------------- | --------------------------------- | ------- |
+| value        | Input value                 | `string`                          | -       |
+| onChange     | Callback when value changes | `({ target: { value } }) => void` | -       |
+| autoComplete | Enable autoComplete         | `boolean`                         | `false` |
+| placeholder  | Input placeholder           | `string`                          | -       |
 
 ---
 
@@ -87,12 +87,12 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Textarea value | `string` | - |
-| onChange | Callback when value changes | `({ target: { value } }) => void` | - |
-| rows | Number of rows | `number` | `4` |
-| placeholder | Textarea placeholder | `string` | - |
+| Property    | Description                 | Type                              | Default |
+| ----------- | --------------------------- | --------------------------------- | ------- |
+| value       | Textarea value              | `string`                          | -       |
+| onChange    | Callback when value changes | `({ target: { value } }) => void` | -       |
+| rows        | Number of rows              | `number`                          | `4`     |
+| placeholder | Textarea placeholder        | `string`                          | -       |
 
 ---
 
@@ -122,21 +122,23 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Input value | `number` | - |
-| onChange | Callback when value changes | `({ target: { value } }) => void` | - |
-| min | Minimum value | `number` | - |
-| max | Maximum value | `number` | - |
-| step | Step value | `number` | `1` |
+| Property | Description                 | Type                              | Default |
+| -------- | --------------------------- | --------------------------------- | ------- |
+| value    | Input value                 | `number`                          | -       |
+| onChange | Callback when value changes | `({ target: { value } }) => void` | -       |
+| min      | Minimum value               | `number`                          | -       |
+| max      | Maximum value               | `number`                          | -       |
+| step     | Step value                  | `number`                          | `1`     |
 
 ---
 
 ## AcInputCopyable
 
-Input component with copy-to-clipboard functionality.
+Input component with copy-to-clipboard functionality and optional link opener.
 
-### Basic Usage
+### Text Type (Default)
+
+Copy-only functionality for text values.
 
 ```tsx
 import { useState } from 'react';
@@ -155,13 +157,36 @@ function Example() {
 }
 ```
 
+### Link Type
+
+Copy and open URL functionality for links.
+
+```tsx
+import { useState } from 'react';
+import { AcInputCopyable } from '@jswork/antd-components';
+
+function Example() {
+  const [url, setUrl] = useState('https://example.com');
+
+  return (
+    <AcInputCopyable
+      value={url}
+      valueType="link"
+      onChange={({ target }) => setUrl(target.value)}
+      placeholder="Enter URL..."
+    />
+  );
+}
+```
+
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Input value | `string` | - |
-| onChange | Callback when value changes | `({ target: { value } }) => void` | - |
-| placeholder | Input placeholder | `string` | - |
+| Property    | Description                    | Type                              | Default  |
+| ----------- | ------------------------------ | --------------------------------- | -------- |
+| value       | Input value                    | `string`                          | -        |
+| onChange    | Callback when value changes    | `({ target: { value } }) => void` | -        |
+| valueType   | Display mode: 'text' or 'link' | `'text' \| 'link'`                | `'text'` |
+| placeholder | Input placeholder              | `string`                          | -        |
 
 ---
 
@@ -190,11 +215,45 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Array of tokens | `string[]` | - |
-| onChange | Callback when tokens change | `({ target: { value } }) => void` | - |
-| placeholder | Input placeholder | `string` | - |
+| Property    | Description                 | Type                              | Default |
+| ----------- | --------------------------- | --------------------------------- | ------- |
+| value       | Array of tokens             | `string[]`                        | -       |
+| onChange    | Callback when tokens change | `({ target: { value } }) => void` | -       |
+| placeholder | Input placeholder           | `string`                          | -       |
+
+---
+
+## AcMarkdownEditor
+
+Markdown editor with live preview.
+
+### Basic Usage
+
+```tsx
+import { useState } from 'react';
+import { AcMarkdownEditor } from '@jswork/antd-components';
+
+function Example() {
+  const [markdown, setMarkdown] = useState('# Hello World\n\nStart writing...');
+
+  return (
+    <AcMarkdownEditor
+      value={markdown}
+      onChange={({ target }) => setMarkdown(target.value)}
+      placeholder="Write markdown..."
+    />
+  );
+}
+```
+
+### API
+
+| Property    | Description                   | Type                              | Default   |
+| ----------- | ----------------------------- | --------------------------------- | --------- |
+| value       | Markdown content              | `string`                          | -         |
+| onChange    | Callback when content changes | `({ target: { value } }) => void` | -         |
+| placeholder | Editor placeholder            | `string`                          | -         |
+| height      | Editor height                 | `string \| number`                | `'400px'` |
 
 ---
 
@@ -222,10 +281,10 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Hidden value | `string` | - |
-| onChange | Callback when value changes | `({ target: { value } }) => void` | - |
+| Property | Description                 | Type                              | Default |
+| -------- | --------------------------- | --------------------------------- | ------- |
+| value    | Hidden value                | `string`                          | -       |
+| onChange | Callback when value changes | `({ target: { value } }) => void` | -       |
 
 ---
 
@@ -254,11 +313,11 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Array of tags | `string[]` | - |
-| onChange | Callback when tags change | `({ target: { value } }) => void` | - |
-| placeholder | Input placeholder | `string` | - |
+| Property    | Description               | Type                              | Default |
+| ----------- | ------------------------- | --------------------------------- | ------- |
+| value       | Array of tags             | `string[]`                        | -       |
+| onChange    | Callback when tags change | `({ target: { value } }) => void` | -       |
+| placeholder | Input placeholder         | `string`                          | -       |
 
 ---
 
@@ -287,12 +346,12 @@ function Example() {
 
 ### API
 
-| Property | Description | Type | Default |
-|----------|-------------|------|---------|
-| value | Hex color value (e.g., #ffcc00) | `string` | - |
-| onChange | Callback when color changes | `({ target: { value } }) => void` | - |
-| allowClear | Allow clearing the color | `boolean` | `false` |
-| placeholder | Placeholder text | `string` | - |
+| Property    | Description                     | Type                              | Default |
+| ----------- | ------------------------------- | --------------------------------- | ------- |
+| value       | Hex color value (e.g., #ffcc00) | `string`                          | -       |
+| onChange    | Callback when color changes     | `({ target: { value } }) => void` | -       |
+| allowClear  | Allow clearing the color        | `boolean`                         | `false` |
+| placeholder | Placeholder text                | `string`                          | -       |
 
 ---
 

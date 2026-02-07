@@ -72,11 +72,36 @@ Components for displaying and interacting with data.
 - **[AcTableToggleSwitcher](/components/data-display#actabletoggleswitcher)** - Table with toggle switcher
 - **[AcTree](/components/data-display#actree)** - Tree component
 - **[AcCardExtras](/components/data-display#accardextras)** - Card with extra actions
-- **[AcCheckableTag](/components/data-display#accheckabletag)** - Checkable tag
-- **[AcCheckableTagList](/components/data-display#accheckabletaglist)** - Checkable tag list
-- **[AcEditableTagGroup](/components/data-display#aceditabletaggroup)** - Editable tag group
 
 [View Documentation](/components/data-display)
+
+### Tag Components
+
+Tag components with various interaction patterns.
+
+- **[AcCheckableTag](/components/tag-components#accheckabletag)** - Checkable tag
+- **[AcCheckableTagList](/components/tag-components#accheckabletaglist)** - Checkable tag list
+- **[AcEditableTagGroup](/components/tag-components#aceditabletaggroup)** - Editable tag group
+
+[View Documentation](/components/tag-components)
+
+### Other Components
+
+Additional utility and helper components.
+
+- **[AcButton](/components/other-components#acbutton)** - Button component
+- **[AcConfirmButton](/components/other-components#acconfirmbutton)** - Button with confirmation
+- **[AcSearch](/components/other-components#acsearch)** - Search input component
+- **[AcExtraSearch](/components/other-components#acextrasearch)** - Extended search with URL sync
+- **[AcAlert](/components/other-components#acalert)** - Alert notification component
+- **[AcBreadcrumb](/components/other-components#acbreadcrumb)** - Breadcrumb navigation
+- **[AcCodeFlask](/components/other-components#accodeflask)** - Code editor component
+- **[AcInteractiveList](/components/other-components#acinteractivelist)** - Interactive list component
+- **[AcCheckableDropdown](/components/other-components#accheckabledropdown)** - Dropdown with checkable options
+- **[AcFormActions](/components/other-components#acformactions)** - Form action buttons component
+- **[AcPreSelect](/components/other-components#acpreselect)** - Pre-selection component
+
+[View Documentation](/components/other-components)
 
 ## Component Naming Convention
 
@@ -117,15 +142,15 @@ const schema = {
     username: {
       type: 'string',
       title: 'Username',
-      component: 'ac-input'
+      component: 'ac-input',
     },
     role: {
       type: 'string',
       title: 'Role',
       component: 'ac-select',
-      enum: ['admin', 'user', 'guest']
-    }
-  }
+      enum: ['admin', 'user', 'guest'],
+    },
+  },
 };
 
 function FormExample() {
@@ -134,7 +159,7 @@ function FormExample() {
       schema={schema}
       components={{
         'ac-input': AcInput,
-        'ac-select': AcSelect
+        'ac-select': AcSelect,
       }}
     />
   );
